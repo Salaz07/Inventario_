@@ -8,9 +8,9 @@ import random
 
 
 inventario = {
-    "zanahorias": [100, 70],  #Lista: [cantidad actual, umbral mínimo]
-    "platanos": [120, 50],   #Lista: [cantidad actual, umbral mínimo]
-    "papitas": [80, 30],    #Lista: [cantidad actual, umbral mínimo]
+    "Zanahorias": [100, 70],  #Lista: [cantidad actual, umbral mínimo]
+    "Platanos": [120, 50],   #Lista: [cantidad actual, umbral mínimo]
+    "Papitas": [80, 30],    #Lista: [cantidad actual, umbral mínimo]
 }
 
 def imprimir_menu():   
@@ -34,7 +34,7 @@ def digitar_opcion():   #Funcion para ingresar la opcion del menu
 
 def agregar_producto(): #Opción 1 usada para agregar un producto a la lista
     while True:
-        producto_nuevo = input("Ingrese el nombre del nuevo producto: ")
+        producto_nuevo = input("Ingrese el nombre del nuevo producto: ").lower().capitalize()
         cantidad_actual = input("Ingrese la cantidad actual del producto: ")
         umbral_minimo = input("Ingrese el umbral mínimo del producto: ")
 
@@ -86,7 +86,7 @@ def verificar_alertas_reorden(): #Opción 5 usada para saber que producto necesi
             print(f"No hay alertas de reorden para '{producto:15}'\n")
 
 def reabastecer_producto(): #Opción 6 usada para reabastecer cualquiera de los productos existentes en el inventario
-    nombre_producto = input("Ingrese el nombre del producto que desea reabastecer: ")
+    nombre_producto = input("Ingrese el nombre del producto que desea reabastecer: ").lower().capitalize()
     if nombre_producto in inventario:
         while True:
             cantidad_reabastecimiento = input(f"Ingrese la cantidad de '{nombre_producto}' que desea reabastecer: ")
